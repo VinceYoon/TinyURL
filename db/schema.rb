@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_09_224931) do
+ActiveRecord::Schema.define(version: 2021_07_09_231411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "tiny_urls", force: :cascade do |t|
+  create_table "links", force: :cascade do |t|
     t.string "token"
-    t.text "url"
+    t.text "original_url"
     t.integer "visits", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["token"], name: "index_tiny_urls_on_token", unique: true
+    t.index ["token"], name: "index_links_on_token", unique: true
   end
 
 end
