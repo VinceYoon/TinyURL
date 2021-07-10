@@ -1,0 +1,16 @@
+<div id ="url_list">
+	<table>
+		<tr>
+			<th>TinyURL</th>
+			<th>show</th>
+			<th>Info</th>
+		</tr>
+		<% for link in @links %>
+			<tr>
+				<td> <%= link.token %> </td>
+				<td><%= link_to "Show", controller: "links", action: "show", token: link.token %></td>
+				<td><%= link_to "Info", controller: "links", action: "info", token: link.token %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>

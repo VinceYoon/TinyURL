@@ -1,0 +1,11 @@
+<h1>Make a Tiny URL</h1>
+<p>Please add the original URL above box and apply it</p>
+
+<%= render :partial => 'form' %>
+
+<div id="url_lists">
+	<% if @links.size > 0 %>
+		<h3>Tiny URL List </h3>
+		<%= render :partial => 'list' %>
+	<% end %>
+</div>

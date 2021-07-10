@@ -1,0 +1,13 @@
+<% if @link.errors.any? -%>
+  $("#notice").hide(300);
+  var failed = 
+  	"<div class='fail'><%= @link.errors.full_messages.join(". ") << '.' -%></div>";
+  $("#post_errors").html(failed);
+  $("#post_errors").show(300);
+<% else -%>
+  var success = 
+  	"<div class='success'>Success to make Tiny URL</div>";
+  $("#notice").html(success);
+  $("#notice").show(50);
+  $("#url_lists").html("<%= escape_javascript( render(:partial => '/home/list') ) %>");
+<% end -%>

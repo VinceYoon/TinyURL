@@ -34,4 +34,23 @@ RSpec.describe Link, type: :model do
 	it '#initialize_token' do
 		expect(subject.initialize_token).to be_present
 	end
+
+	it '#is_presence_original_url?' do
+		expect(subject.is_presence_original_url?).to eq true
+	end
+
+	context '#get_uri_from_original_url' do
+		it 'return true if the original url is valid' do
+			expect(subject.get_uri_from_original_url).to eq true
+		end
+
+		it 'return false if the original url is invalid' do
+			subject.original_url = 'https://invalid_url.com/'
+			expect(subject.get_uri_from_original_url).to eq false
+		end
+	end
+
+	it '#increase_visits_counter' do
+		expect { subject.increase_visits_counter }.to change { subject.visits }.from(0).to(1)
+	end
 end

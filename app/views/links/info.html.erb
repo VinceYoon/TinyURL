@@ -1,0 +1,14 @@
+<table>
+	<tr>
+		<th>TinyURL</th>
+		<th>OriginalURL</th>
+		<th>Vistits</th>
+		<th>Created At</th>
+	</tr>
+	<tr>
+		<td> <%= @link.token %> </td>
+		<td> <%= @link.original_url %> </td>
+		<td> <%= @link.visits %> </td>
+		<td> <%= @link.created_at.strftime('%m/%d/%Y') %> </td>
+	</tr>
+</table>
